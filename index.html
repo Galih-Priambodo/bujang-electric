@@ -13,66 +13,75 @@
     <meta content="id_ID" property="og:locale" />
 
     <!-- ======================================== -->
-    <!-- CSS & FONTS (DI HEAD - LOAD CEPAT) -->
+    <!-- TAILWIND CSS -->
     <!-- ======================================== -->
-    <link rel="stylesheet" href="https://cdn.tailwindcss.com?plugins=forms,container-queries" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- ======================================== -->
-    <!-- KONFIGURASI TAILWIND (Harus di Head) -->
+    <!-- TAILWIND CONFIG (DENGAN PENANGANAN ERROR) -->
     <!-- ======================================== -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            dark: '#0a1628',
-                            DEFAULT: '#1a2942',
-                            light: '#2a3a52'
-                        },
-                        gold: {
-                            dark: '#f5b800',
-                            DEFAULT: '#ffd23f',
-                            light: '#ffdf70'
-                        },
-                        electric: '#ffd23f',
-                        danger: '#dc2626'
-                    },
-                    fontFamily: {
-                        'heading': ['Oswald', 'sans-serif'],
-                        'body': ['Inter', 'sans-serif']
-                    },
-                    animation: {
-                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                        'spark': 'spark 1.5s ease-in-out infinite',
-                        'fade-in-up': 'fade-in-up 0.6s ease-out'
-                    },
-                    keyframes: {
-                        'pulse-glow': {
-                            '0%, 100%': { 'box-shadow': '0 0 5px #ffd23f' },
-                            '50%': { 'box-shadow': '0 0 20px #ffd23f, 0 0 30px #ffd23f' }
-                        },
-                        'float': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        'spark': {
-                            '0%, 100%': { opacity: '0.3' },
-                            '50%': { opacity: '1' }
-                        },
-                        'fade-in-up': {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
+        // Fungsi untuk menunggu Tailwind siap
+        (function initTailwind() {
+            if (typeof tailwind !== 'undefined') {
+                tailwind.config = {
+                    theme: {
+                        extend: {
+                            colors: {
+                                navy: { dark: '#0a1628', DEFAULT: '#1a2942', light: '#2a3a52' },
+                                gold: { dark: '#f5b800', DEFAULT: '#ffd23f', light: '#ffdf70' },
+                                electric: '#ffd23f',
+                                danger: '#dc2626'
+                            },
+                            fontFamily: {
+                                'heading': ['Oswald', 'sans-serif'],
+                                'body': ['Inter', 'sans-serif']
+                            },
+                            animation: {
+                                'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                                'float': 'float 3s ease-in-out infinite',
+                                'spark': 'spark 1.5s ease-in-out infinite',
+                                'fade-in-up': 'fade-in-up 0.6s ease-out'
+                            },
+                            keyframes: {
+                                'pulse-glow': {
+                                    '0%, 100%': { 'box-shadow': '0 0 5px #ffd23f' },
+                                    '50%': { 'box-shadow': '0 0 20px #ffd23f, 0 0 30px #ffd23f' }
+                                },
+                                'float': {
+                                    '0%, 100%': { transform: 'translateY(0)' },
+                                    '50%': { transform: 'translateY(-10px)' }
+                                },
+                                'spark': {
+                                    '0%, 100%': { opacity: '0.3' },
+                                    '50%': { opacity: '1' }
+                                },
+                                'fade-in-up': {
+                                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                                    '100%': { opacity: '1', transform: 'translateY(0)' }
+                                }
+                            }
                         }
                     }
-                }
+                };
+                console.log("✅ Tailwind config loaded successfully!");
+            } else {
+                console.log("⏳ Waiting for Tailwind...");
+                setTimeout(initTailwind, 100);
             }
-        }
+        })();
     </script>
+
+    <!-- ======================================== -->
+    <!-- FONT AWESOME & GOOGLE FONTS -->
+    <!-- ======================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- ======================================== -->
+    <!-- CUSTOM CSS -->
+    <!-- ======================================== -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body class="font-body bg-navy-dark text-white">
 
@@ -371,7 +380,7 @@
     </div>
 
     <!-- ======================================== -->
-    <!-- JAVASCRIPT (DI BAWAH - LOAD TERAKHIR) -->
+    <!-- JAVASCRIPT (DI BAWAH) -->
     <!-- ======================================== -->
     <script src="szcript.js"></script>
 
