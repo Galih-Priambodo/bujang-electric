@@ -2,17 +2,24 @@
 <html lang="id">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BUJANG ELECTRIC</title>
-    
+    <base target="_self" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BUJANG ELECTRIC - Spesialis Instalasi &amp; Kontrol Motor Listrik 3 Phase</title>
+    <meta content="BUJANG ELECTRIC: Solusi kelistrikan industri yang andal dan profesional. Spesialis instalasi &amp; kontrol motor listrik 3 phase, panel kontrol, star-delta, DOL, forward-reverse. AMAN, HANDAL, CEPAT, BERKUALITAS." name="description" />
+    <meta content="instalasi motor listrik 3 phase, panel kontrol motor, jasa star delta, kontraktor listrik industri, motor 3 phase, star-delta manual, star-delta otomatis, forward-reverse, DOL, troubleshooting motor" name="keywords" />
+    <meta content="BUJANG ELECTRIC - Spesialis Instalasi &amp; Kontrol Motor Listrik 3 Phase" property="og:title" />
+    <meta content="Solusi kelistrikan industri yang andal dan profesional. Spesialis instalasi &amp; kontrol motor listrik 3 phase." property="og:description" />
+    <meta content="website" property="og:type" />
+    <meta content="id_ID" property="og:locale" />
+
     <!-- ======================================== -->
-    <!-- CSS DI HEAD (Load Lebih Cepat) -->
+    <!-- CSS & FONTS (DI HEAD - LOAD CEPAT) -->
     <!-- ======================================== -->
     <link rel="stylesheet" href="https://cdn.tailwindcss.com?plugins=forms,container-queries" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    
+
     <!-- ======================================== -->
     <!-- KONFIGURASI TAILWIND (Harus di Head) -->
     <!-- ======================================== -->
@@ -39,7 +46,7 @@
                         'body': ['Inter', 'sans-serif']
                     },
                     animation: {
-                        'pulse-glow': 'pulse-glow -2s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
                         'float': 'float 3s ease-in-out infinite',
                         'spark': 'spark 1.5s ease-in-out infinite',
                         'fade-in-up': 'fade-in-up 0.6s ease-out'
@@ -67,17 +74,18 @@
         }
     </script>
 </head>
-<body>
+<body class="font-body bg-navy-dark text-white">
+
     <!-- ======================================== -->
-    <!-- SEMUA KONTEN HTML -->
+    <!-- FLOATING WHATSAPP BUTTON -->
     <!-- ======================================== -->
-    
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/6285283935432" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse-glow">
+    <a aria-label="Hubungi via WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse-glow" href="https://wa.me/6285283935432" target="_blank">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <!-- Navigation -->
+    <!-- ======================================== -->
+    <!-- NAVIGATION -->
+    <!-- ======================================== -->
     <nav class="sticky-nav fixed top-0 w-full z-40 py-4 nav-blur" id="mainNav">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
@@ -97,7 +105,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ======================================== -->
+    <!-- HERO SECTION -->
+    <!-- ======================================== -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="home">
         <div class="electric-spark"></div>
         <div class="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-navy-light opacity-90"></div>
@@ -125,7 +135,9 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- ======================================== -->
+    <!-- SERVICES SECTION -->
+    <!-- ======================================== -->
     <section class="py-20 bg-navy" id="layanan">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -137,7 +149,9 @@
         </div>
     </section>
 
-    <!-- Wiring Diagram Section -->
+    <!-- ======================================== -->
+    <!-- WIRING DIAGRAM SECTION -->
+    <!-- ======================================== -->
     <section class="py-20 bg-navy-dark" id="diagram">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -160,7 +174,9 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- ======================================== -->
+    <!-- PORTFOLIO SECTION -->
+    <!-- ======================================== -->
     <section class="py-20 bg-navy" id="portfolio">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -173,7 +189,9 @@
         </div>
     </section>
 
-    <!-- Why Us Section -->
+    <!-- ======================================== -->
+    <!-- WHY US SECTION -->
+    <!-- ======================================== -->
     <section class="py-20 bg-navy-dark" id="whyus">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -185,7 +203,9 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ======================================== -->
+    <!-- ABOUT SECTION -->
+    <!-- ======================================== -->
     <section class="py-20 bg-navy" id="tentang">
         <div class="container mx-auto px-4">
             <div class="flex flex-col lg:flex-row items-center">
@@ -216,7 +236,9 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- ======================================== -->
+    <!-- TESTIMONIALS SECTION -->
+    <!-- ======================================== -->
     <section class="py-20 bg-navy-dark" id="testimoni">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -228,7 +250,9 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- ======================================== -->
+    <!-- CTA SECTION -->
+    <!-- ======================================== -->
     <section class="py-20 bg-gradient-to-r from-navy-dark to-navy" id="kontak">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -277,7 +301,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
     <footer class="bg-navy-dark py-12 border-t border-gray-800">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center mb-8">
@@ -331,7 +357,9 @@
         </div>
     </footer>
 
-    <!-- Lightbox -->
+    <!-- ======================================== -->
+    <!-- LIGHTBOX -->
+    <!-- ======================================== -->
     <div class="lightbox" id="lightbox">
         <div class="relative max-w-4xl w-full mx-4">
             <button class="absolute -top-12 right-0 text-white text-3xl hover:text-gold" id="closeLightbox">
@@ -342,11 +370,10 @@
         </div>
     </div>
 
-  
-    <!-- JavaScript External File -->
+    <!-- ======================================== -->
+    <!-- JAVASCRIPT (DI BAWAH - LOAD TERAKHIR) -->
+    <!-- ======================================== -->
     <script src="szcript.js"></script>
-    
- 
-  
+
 </body>
 </html>
