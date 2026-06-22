@@ -1,22 +1,20 @@
 /* ========================================
-   TAILWIND CONFIG + CUSTOM STYLES
    BUJANG ELECTRIC - style.css
+   Custom CSS & Animations
    ======================================== */
 
-/* --- Tailwind Extensions --- */
-@layer base {
-    :root {
-        --navy-dark: #0a1628;
-        --navy: #1a2942;
-        --navy-light: #2a3a52;
-        --gold-dark: #f5b800;
-        --gold: #ffd23f;
-        --gold-light: #ffdf70;
-        --danger: #dc2626;
-    }
+/* --- Color Variables --- */
+:root {
+    --navy-dark: #0a1628;
+    --navy: #1a2942;
+    --navy-light: #2a3a52;
+    --gold-dark: #f5b800;
+    --gold: #ffd23f;
+    --gold-light: #ffdf70;
+    --danger: #dc2626;
 }
 
-/* --- Custom Utilities --- */
+/* --- Custom Classes --- */
 .text-gold {
     color: var(--gold);
 }
@@ -52,8 +50,8 @@
 
 /* --- Animations --- */
 @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 5px #ffd23f; }
-    50% { box-shadow: 0 0 20px #ffd23f, 0 0 30px #ffd23f; }
+    0%, 100% { box-shadow: 0 0 5px var(--gold); }
+    50% { box-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold); }
 }
 @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -81,7 +79,7 @@
     animation: fade-in-up 0.6s ease-out forwards;
 }
 
-/* --- Lightning Bolt --- */
+/* --- Lightning Bolt Effect --- */
 .lightning-bolt {
     position: relative;
     display: inline-block;
@@ -93,7 +91,7 @@
     top: 50%;
     width: 40px;
     height: 60px;
-    background: linear-gradient(45deg, transparent 30%, #ffd23f 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, var(--gold) 50%, transparent 70%);
     transform: translateY(-50%);
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
@@ -140,9 +138,9 @@
     transition: all 0.3s ease;
 }
 .diagram-tab.active {
-    background-color: #1a2942;
-    color: #ffd23f;
-    border-color: #ffd23f;
+    background-color: var(--navy);
+    color: var(--gold);
+    border-color: var(--gold);
 }
 
 /* --- Lightbox --- */
@@ -162,7 +160,7 @@
     display: flex;
 }
 
-/* --- Gambar --- */
+/* --- Images --- */
 img {
     -webkit-user-drag: none;
     user-drag: none;
@@ -175,8 +173,5 @@ img {
     .lightning-bolt::before,
     .lightning-bolt::after {
         display: none;
-    }
-    .lightning-bolt {
-        display: inline-block;
     }
 }
