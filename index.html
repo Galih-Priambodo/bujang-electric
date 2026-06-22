@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUJANG ELECTRIC</title>
+    
+    <!-- ======================================== -->
+    <!-- CSS DI HEAD (Load Lebih Cepat) -->
+    <!-- ======================================== -->
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com?plugins=forms,container-queries" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- ======================================== -->
+    <!-- KONFIGURASI TAILWIND (Harus di Head) -->
+    <!-- ======================================== -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            dark: '#0a1628',
+                            DEFAULT: '#1a2942',
+                            light: '#2a3a52'
+                        },
+                        gold: {
+                            dark: '#f5b800',
+                            DEFAULT: '#ffd23f',
+                            light: '#ffdf70'
+                        },
+                        electric: '#ffd23f',
+                        danger: '#dc2626'
+                    },
+                    fontFamily: {
+                        'heading': ['Oswald', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulse-glow -2s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'spark': 'spark 1.5s ease-in-out infinite',
+                        'fade-in-up': 'fade-in-up 0.6s ease-out'
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                            '0%, 100%': { 'box-shadow': '0 0 5px #ffd23f' },
+                            '50%': { 'box-shadow': '0 0 20px #ffd23f, 0 0 30px #ffd23f' }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'spark': {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '1' }
+                        },
+                        'fade-in-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- ======================================== -->
+    <!-- SEMUA KONTEN HTML -->
+    <!-- ======================================== -->
+    
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6285283935432" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse-glow">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="sticky-nav fixed top-0 w-full z-40 py-4 nav-blur" id="mainNav">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-gold font-heading font-bold text-xl md:text-2xl">
+                        <span class="lightning-bolt">BUJANG ELECTRIC</span>
+                    </div>
+                </div>
+                <ul class="hidden md:flex space-x-8" id="navMenu"></ul>
+                <button class="md:hidden text-gold text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="md:hidden mt-4 hidden" id="mobileMenu">
+                <ul class="space-y-4" id="mobileNavList"></ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="home">
+        <div class="electric-spark"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-navy-light opacity-90"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                    <div class="inline-block mb-6 px-4 py-2 bg-danger text-white text-sm font-bold rounded-full">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>BAHAYA LISTRIK
+                    </div>
+                    <h1 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-gold mb-4">
+                        <span class="lightning-bolt">BUJANG ELECTRIC</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gold-light mb-6 font-semibold uppercase tracking-wider">SPESIALIS INSTALASI &amp; KONTROL MOTOR LISTRIK 3 PHASE</h2>
+                    <p class="text-lg md:text-xl text-white mb-8 bg-navy/50 p-4 rounded border-l-4 border-gold">
+                        <i class="fas fa-bolt text-gold mr-2"></i>"Solusi Tepat, Kerja Hebat, Hasil Maksimal"
+                    </p>
+                    <a class="inline-block bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-8 rounded text-lg transition-all duration-300 transform hover:scale-105 shadow-lg" href="https://wa.me/6285283935432" target="_blank">
+                        <i class="fab fa-whatsapp mr-2"></i>Hubungi via WhatsApp
+                    </a>
+                </div>
+                <div class="lg:w-1/2 flex justify-center animate-float px-4">
+                    <img alt="Panel Listrik 3 Phase" class="rounded-xl shadow-2xl border-4 border-gold/30 max-w-full h-auto object-contain" id="heroImage" src="https://rakhman.net/wp-content/uploads/2023/09/panel-listrik-768x614.jpg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-navy" id="layanan">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl text-gold mb-4">LAYANAN &amp; KEAHLIAN</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Kami menyediakan solusi lengkap untuk semua kebutuhan kontrol motor listrik 3 phase Anda</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Wiring Diagram Section -->
+    <section class="py-20 bg-navy-dark" id="diagram">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl text-gold mb-4">GALERI WIRING DIAGRAM</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Pelajari skema dasar kontrol motor listrik 3 phase yang kami kerjakan</p>
+            </div>
+            <div class="mb-8 flex flex-wrap justify-center gap-4" id="diagramTabs"></div>
+            <div class="bg-navy-light rounded-xl p-6 shadow-2xl">
+                <div class="flex flex-col lg:flex-row items-center" id="diagramContent">
+                    <div class="lg:w-1/2 mb-8 lg:mb-0">
+                        <img alt="Diagram Kontrol Motor" class="rounded-lg w-full max-h-[500px] object-contain bg-navy-dark border border-gray-700" id="diagramImage" src="" />
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-8">
+                        <h3 class="text-2xl font-bold text-gold mb-4" id="diagramTitle"></h3>
+                        <div class="text-gray-300 space-y-4" id="diagramDescription"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="py-20 bg-navy" id="portfolio">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl text-gold mb-4">PORTOFOLIO PROYEK</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Beberapa proyek instalasi dan panel kontrol yang telah kami selesaikan</p>
+            </div>
+            <div class="mb-8 flex flex-wrap justify-center gap-4" id="portfolioFilters"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid"></div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="py-20 bg-navy-dark" id="whyus">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl text-gold mb-4">KENAPA PILIH KAMI?</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">4 pilar nilai yang menjadi dasar setiap pekerjaan kami</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="valuesGrid"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-navy" id="tentang">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="font-heading text-4xl md:text-5xl text-gold mb-6">TENTANG KAMI</h2>
+                    <div class="space-y-4 text-gray-300">
+                        <p class="text-lg">BUJANG ELECTRIC adalah perusahaan spesialis di bidang instalasi dan kontrol motor listrik 3 phase, dengan pengalaman melayani kebutuhan kelistrikan industri.</p>
+                        <p class="text-lg">Kami berkomitmen memberikan solusi yang AMAN, HANDAL, CEPAT, dan BERKUALITAS untuk setiap proyek yang kami tangani.</p>
+                        <p class="text-lg">Dengan tim teknisi yang berpengalaman, kami siap membantu Anda dalam perencanaan, instalasi, hingga maintenance sistem kontrol motor listrik.</p>
+                    </div>
+                    <div class="mt-8 flex items-center">
+                        <div class="bg-gold/20 p-4 rounded mr-4">
+                            <i class="fas fa-award text-gold text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Profesional &amp; Berpengalaman</h3>
+                            <p class="text-gray-300">Tim teknisi dengan pengalaman luas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-gold/10 rounded-xl blur-xl group-hover:bg-gold/20 transition-all duration-500"></div>
+                        <img alt="Tim Bujang Electric" class="relative rounded-xl shadow-2xl border-2 border-gold/30 w-full h-auto object-contain" id="aboutImage" src="https://4.bp.blogspot.com/-DHQMmLc9zN0/XCDhfhdriEI/AAAAAAAAA2U/_pS6nAeRtBoV4FfEmxMfjrjoP7op1soWQCLcBGAs/s1600/WhatsApp%2BImage%2B2018-12-24%2Bat%2B09.46.27.jpeg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-navy-dark" id="testimoni">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl text-gold mb-4">TESTIMONI PELANGGAN</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Apa kata klien yang telah menggunakan jasa kami</p>
+            </div>
+            <div class="relative overflow-hidden rounded-xl bg-navy-light p-8" id="testimonialsSlider"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-navy-dark to-navy" id="kontak">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="inline-block bg-danger/20 text-danger font-bold py-3 px-6 rounded-full mb-6 border border-danger">
+                    <i class="fas fa-exclamation-circle mr-2"></i>SIAP MELAYANI PESANAN, SIAP MENERIMA PANGGILAN
+                </div>
+                <h2 class="font-heading text-4xl md:text-5xl text-gold mb-6">HUBUNGI KAMI SEKARANG</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">Konsultasikan kebutuhan instalasi motor listrik 3 phase Anda dengan ahli kami</p>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-8">
+                <a class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-5 px-10 rounded text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center" href="https://wa.me/6285283935432" target="_blank">
+                    <i class="fab fa-whatsapp text-3xl mr-4"></i>
+                    <div class="text-left">
+                        <div class="text-2xl">WhatsApp</div>
+                        <div class="text-lg">0852-8393-5432</div>
+                    </div>
+                </a>
+                <a class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-5 px-10 rounded text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center" href="https://instagram.com/bujangsibabihutan" target="_blank">
+                    <i class="fab fa-instagram text-3xl mr-4"></i>
+                    <div class="text-left">
+                        <div class="text-2xl">Instagram</div>
+                        <div class="text-lg">@bujangsibabihutan</div>
+                    </div>
+                </a>
+            </div>
+            <div class="mt-16 max-w-2xl mx-auto bg-navy-light rounded-xl p-8">
+                <h3 class="text-2xl font-bold text-gold mb-6 text-center">Kirim Pesan Langsung</h3>
+                <form class="space-y-6" id="contactForm">
+                    <div>
+                        <label class="block text-gray-300 mb-2" for="name">Nama Lengkap</label>
+                        <input class="w-full px-4 py-3 rounded bg-navy-dark border border-gray-700 text-white focus:border-gold focus:outline-none" id="name" required="" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2" for="phone">Nomor WhatsApp</label>
+                        <input class="w-full px-4 py-3 rounded bg-navy-dark border border-gray-700 text-white focus:border-gold focus:outline-none" id="phone" required="" type="tel" />
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2" for="message">Pesan / Permintaan</label>
+                        <textarea class="w-full px-4 py-3 rounded bg-navy-dark border border-gray-700 text-white focus:border-gold focus:outline-none" id="message" required="" rows="4"></textarea>
+                    </div>
+                    <button class="w-full bg-gold hover:bg-gold-dark text-navy-dark font-bold py-4 px-6 rounded text-lg transition-all duration-300 transform hover:scale-[1.02]" type="submit">
+                        <i class="fab fa-whatsapp mr-2"></i>Kirim via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-gold font-heading font-bold text-2xl mb-2">
+                        <span class="lightning-bolt">BUJANG ELECTRIC</span>
+                    </div>
+                    <p class="text-gray-400">"Solusi Kelistrikan Industri yang Andal dan Profesional"</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a class="text-gray-400 hover:text-[#25D366] transition-colors" href="https://wa.me/6285283935432" target="_blank">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a class="text-gray-400 hover:text-pink-500 transition-colors" href="https://instagram.com/bujangsibabihutan" target="_blank">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-gold text-lg font-bold mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2" id="footerNav"></ul>
+                </div>
+                <div>
+                    <h4 class="text-gold text-lg font-bold mb-4">Kontak</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fab fa-whatsapp text-[#25D366] mr-3"></i>
+                            <span>0852-8393-5432</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fab fa-instagram text-pink-500 mr-3"></i>
+                            <span>@bujangsibabihutan</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gold text-lg font-bold mb-4">Layanan Unggulan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• Motor 3 Phase Instalasi</li>
+                        <li>• Star-Delta Manual/Otomatis</li>
+                        <li>• Panel Kontrol Motor</li>
+                        <li>• Troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>© 2026 BUJANG ELECTRIC. Semua hak dilindungi.</p>
+                <p class="mt-2 text-sm">Spesialis Instalasi &amp; Kontrol Motor Listrik 3 Phase</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="relative max-w-4xl w-full mx-4">
+            <button class="absolute -top-12 right-0 text-white text-3xl hover:text-gold" id="closeLightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <img alt="Lightbox View" class="rounded-lg w-full object-contain" id="lightboxImage" src="" />
+            <div class="text-white text-center mt-4 text-lg" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+  
+    <!-- JavaScript External File -->
+    <script src="script.js"></script>
+    
+ 
+  
+</body>
+</html>
